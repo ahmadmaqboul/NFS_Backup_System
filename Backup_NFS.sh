@@ -16,9 +16,12 @@ THIS SCRIPT FOR BACKUP USING NFS mounting point
 
 "
 
-while getopts 'h' option; do
+while getopts 'h:x' option; do
   case "$option" in
     h) echo "$help"
+       exit
+       ;;
+    x) echo "some thing we want user to show"
        exit
        ;;
   esac
