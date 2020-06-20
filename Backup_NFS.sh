@@ -23,9 +23,10 @@ while getopts ':hs:' option; do
        ;;
   esac
 done
-BackupFolder="/home/client/Desktop/thisDir" # this is the folder that we mount with the server  
-Folder="/home/client/Desktop/ahmad" # this is the folder that we want to backup in server 
-localBackup="/home/client/Document" #this is the folder that we want to backup in local 
+
+BackupFolder=$1 # this is the folder that we mount with the server  
+Folder=$2 # this is the folder that we want to backup in server 
+localBackup=$3 #this is the folder that we want to backup in local 
 fileName=`date | awk '{print $2 $3 $4}'`
 
 `tar -czvf $BackupFolder/$fileName.tar.gz $Folder `  # Compress and archive
