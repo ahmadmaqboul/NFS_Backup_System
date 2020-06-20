@@ -1,5 +1,28 @@
 #!/bin/bash
+help="
 
+THIS SCRIPT FOR BACKUP USING NFS mounting point 
+
+       please check this link to create the mount point in ubuntu
+       (https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04)
+
+       how you can use it ?
+       sh Backup_NFS.sh [mount file in client] [local Backup location] [folder or file you want to backup]
+       
+       dont forget to give the absolute path 
+       
+       Author : Ahmad Maqboul
+       Date : 20/6/2020
+
+"
+
+while getopts ':hs:' option; do
+  case "$option" in
+    h) echo "$help"
+       exit
+       ;;
+  esac
+done
 BackupFolder="/home/client/Desktop/thisDir" # this is the folder that we mount with the server  
 Folder="/home/client/Desktop/ahmad" # this is the folder that we want to backup in server 
 localBackup="/home/client/Document" #this is the folder that we want to backup in local 
