@@ -16,7 +16,7 @@ THIS SCRIPT FOR BACKUP USING NFS mounting point
 
 "
 
-while getopts ':hs:' option; do
+while getopts 'h' option; do
   case "$option" in
     h) echo "$help"
        exit
